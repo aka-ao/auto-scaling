@@ -119,6 +119,7 @@ resource "aws_launch_configuration" "dev_api" {
   instance_type = "t2.micro"
   key_name = aws_key_pair.auto-scaling.id
   security_groups = [aws_security_group.auto-scaling.id]
+  associate_public_ip_address = true
 
   user_data = <<EOF
   #!/bin/bash
